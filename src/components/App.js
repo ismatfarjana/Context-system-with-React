@@ -37,6 +37,7 @@ class App extends React.Component {
             onClick={() => this.onLanguageChange("mandarin")}
           />
         </div>
+        Translating to {this.state.language}
         <UserCreate />
       </div>
     );
@@ -49,3 +50,9 @@ export default App;
 // initalize state obj with initial language
 // add icon with flag
 //next: add clickeventhandler on both flags, make sure anytime user selects either one we  call some callback function that will updat eour currently selected language
+
+//a context system is: communicating some infor from parent to child component. to do that we need context object of data flow
+
+//in the context object, data can come in two ways: default value or parent componenet/provider
+
+//when the info/data go out of the context object: we can reference it to either the this.context property inside a nested chid component or to another component(Consumer component) inside the nested child component
