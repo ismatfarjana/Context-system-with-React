@@ -7,7 +7,7 @@ class Field extends React.Component {
     return (
       <div className="ui field">
         <label>Name</label>
-
+        <input />
       </div>
     );
   }
