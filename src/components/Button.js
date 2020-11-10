@@ -17,14 +17,14 @@ class Button extends React.Component {
   // }
 
   //consumer approach
-  renderSubmit(value) {
-    return value === "english" ? "submit" : "voorleggen";
+  renderSubmit(language) {
+    return language === "english" ? "submit" : "voorleggen";
   }
   renderButton(color) {
     return (
       <button className={`ui button ${color}`}>
         <LanguageContext.Consumer>
-          {value => this.renderSubmit(value)}
+          {({ language }) => this.renderSubmit(language)}
         </LanguageContext.Consumer>
       </button>
     );
