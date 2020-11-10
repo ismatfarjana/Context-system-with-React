@@ -4,7 +4,28 @@
 
 import React from "react";
 
-export default React.createContext("english");
+const Context = React.createContext("english");
+
+export class LanguageStore extends React.Component {
+  // languagestore has all the current data and the ability to change the data
+  state = { language: "english" };
+
+  onLanguageChange = language => {
+    this.setState({ language });
+  };
+
+  render() {
+    return (
+      <Context.Provider
+        value={{ ...this.state, onLanguageChange: this.onLanguageChange }}
+      >
+        {this.props.children}
+      </Context.Provider>
+    );
+  }
+}
+
+export default Context;
 
 //after creating a context object, we will:  get info into the obj by setting up adefault value
 //creating default value: passing it directly into the create context call
